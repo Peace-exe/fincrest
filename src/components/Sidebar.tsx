@@ -1,15 +1,21 @@
-import { LayoutDashboard, ArrowLeftRight, PieChart, Wallet, Settings, TrendingUp, LogOut } from "lucide-react";
+import { Lightbulb,LayoutDashboard, ArrowLeftRight, PieChart, Wallet, Settings, TrendingUp, LogOut } from "lucide-react";
 
 const navItems = [
-  { icon: LayoutDashboard, label: "Dashboard", active: true },
+  { icon: LayoutDashboard, label: "Overview", active: true },
   { icon: ArrowLeftRight, label: "Transactions" },
   { icon: PieChart, label: "Budgets" },
   { icon: Wallet, label: "Accounts" },
   { icon: TrendingUp, label: "Investments" },
+  {icon:Lightbulb, label :"Insights"},
   { icon: Settings, label: "Settings" },
 ];
 
-const Sidebar = () => {
+interface SidebarProps {
+  activeTab: string;
+  onTabChange: (tab: string) => void;
+}
+
+const Sidebar = ({activeTab,onTabChange}:SidebarProps) => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 forest-gradient flex flex-col">
       <div className="p-6 border-b border-sidebar-border">
@@ -25,8 +31,9 @@ const Sidebar = () => {
         {navItems.map((item) => (
           <button
             key={item.label}
+            onClick={()=>onTabChange(item.label)}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-md text-sm font-body transition-all duration-200 ${
-              item.active
+              item.label === activeTab
                 ? "bg-sidebar-accent text-sidebar-primary"
                 : "text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground"
             }`}

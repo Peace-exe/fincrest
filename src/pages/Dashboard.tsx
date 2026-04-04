@@ -7,6 +7,11 @@ import RecentTransactions from "@/components/RecentTransactions";
 import BudgetOverview from "@/components/BudgetOverview";
 import SpendingChart from "@/components/SpendingChart";
 import { useAuth } from "@/contexts/AuthContext";
+import { useState } from "react";
+import InsightsSection from "@/components/InsightsSection";
+import SpendingBreakdown from "@/components/SpendingBreakdown";
+import Investments from "@/components/Investments";
+import Settings from "@/components/Settings";
 
 const Dashboard = () => {
   const { logout } = useAuth();
@@ -17,9 +22,11 @@ const Dashboard = () => {
     navigate("/");
   };
 
+  const [activeTab, setActiveTab] = useState("Overview");
+  
   return (
     <div className="min-h-screen bg-background">
-      <Sidebar />
+      <Sidebar activeTab = {activeTab} onTabChange={setActiveTab}/>
 
       <main className="ml-64 p-8">
         <div className="flex items-center justify-between mb-8">
@@ -43,19 +50,32 @@ const Dashboard = () => {
         </div>
 
         <div className="mb-6">
-          <NetWorthCard />
+          {activeTab === "Overview" && <NetWorthCard />} 
         </div>
 
         <div className="mb-6">
-          <AccountCards />
+          {activeTab === "Accounts" && <AccountCards />}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          <SpendingChart />
-          <BudgetOverview />
+          {activeTab === "Budgets" && <SpendingChart />} 
+          {activeTab === "Budgets" && <SpendingBreakdown />} 
         </div>
-
-        <RecentTransactions />
+        <div className="mb-6">
+          {activeTab === "Budgets" && <BudgetOverview />}
+        </div>
+        <div className="mb-6">
+        {activeTab === "Transactions" && <RecentTransactions/>}
+        </div>
+        <div className="mb-6">
+          {activeTab === "Insights" && <InsightsSection/>}
+        </div>
+        <div className="mb-6">
+          {activeTab === "Investments" && <Investments/>}
+        </div>
+        <div>
+          {activeTab === "Settings" && <Settings/>}
+        </div>
       </main>
     </div>
   );

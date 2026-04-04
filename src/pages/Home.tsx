@@ -54,7 +54,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-background/60" />
 
         {/* Bottom fade into next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-card to-transparent" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center ">
           <p className="text-sm font-body tracking-[0.3em] uppercase text-muted-foreground mb-4">
@@ -82,7 +82,7 @@ const Home = () => {
       </section>
 
       {/* Features */}
-      <section className="px-6 py-20 bg-card border-t border-border">
+      <section className="px-6 py-20 bg-card">
         <div className="max-w-5xl mx-auto">
           <p className="text-center text-sm font-body tracking-[0.3em] uppercase text-muted-foreground mb-3">
             Why Heritage
