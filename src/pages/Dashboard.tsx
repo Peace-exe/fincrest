@@ -26,6 +26,16 @@ const Dashboard = () => {
   
   return (
     <div className="min-h-screen bg-background">
+
+      {/* Background image — bottom right */}
+<div className="fixed bottom-4 right-4 z-0 pointer-events-none select-none">
+  <img
+    src="/watch2.png"
+    alt=""
+    className="w-50 opacity-15 mix-blend-multiply dark:mix-blend-screen"
+  />
+</div>
+
       <Sidebar activeTab = {activeTab} onTabChange={setActiveTab}/>
 
       <main className="ml-64 p-8">
