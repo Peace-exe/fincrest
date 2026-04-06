@@ -19,8 +19,8 @@ const Sidebar = ({activeTab,onTabChange}:SidebarProps) => {
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 forest-gradient flex flex-col">
       <div className="p-6 border-b border-sidebar-border">
-        <h1 className="text-xl font-heading tracking-wide text-sidebar-foreground">
-          <span className="text-sidebar-primary">Heritage</span> Finance
+        <h1 className="text-xl font-heading tracking-wide text-sidebar-foreground">Fin
+          <span className="text-sidebar-primary">crest</span> 
         </h1>
         <p className="text-xs text-sidebar-foreground/50 mt-1 font-body tracking-widest uppercase">
           Est. 1887

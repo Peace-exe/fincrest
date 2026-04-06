@@ -23,8 +23,8 @@ const Login = () => {
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="w-full max-w-sm">
           <div className="mb-8">
-            <Link to="/" className="font-heading text-lg text-foreground">
-              <span className="text-accent">Heritage</span> Finance
+            <Link to="/" className="font-heading text-lg text-foreground">Fin
+              <span className="text-accent">crest</span> 
             </Link>
           </div>
           <h2 className="text-2xl font-heading text-foreground mb-2">Welcome Back</h2>

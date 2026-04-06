@@ -5,8 +5,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-3  bg-card/0 mt-2 ">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between rounded-xl backdrop-blur-md bg-background/80 border border-border shadow-sm">
         <Link to="/" className="flex items-center gap-2">
-          <h1 className="text-lg font-heading text-foreground">
-            <span className="text-accent">Heritage</span> Finance
+          <h1 className="text-lg font-heading text-foreground">Fin
+            <span className="text-accent">crest</span> 
           </h1>
         </Link>
 
